@@ -1,0 +1,4 @@
+<h3 class="cf-toolbar-item-h3 noselect">{{category.name}}</h3>
+<div *ngFor="let item of category.items" class="cf-toolbar-div">
+    <app-toolbar-item-element [item]=item></app-toolbar-item-element>
+</div>

@@ -1,0 +1,240 @@
+@import '../../../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+@mixin ease($time:333ms, $attr:all, $curve:ease-in-out) {
+  -webkit-transition: $attr $time $curve;
+  -moz-transition: $attr $time $curve;
+  -o-transition: $attr $time $curve;
+  -ms-transition: $attr $time $curve;
+  transition: $attr $time $curve;
+}
+
+.cf-modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1px;
+  height: 1px;
+}
+
+.cf-modal-popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .80);
+  z-index: 200;
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+  transition: .64s ease-in-out;
+
+  &-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    max-width: 800px;
+    max-height: 600px;
+    width: 80%;
+    height: 80%;
+    background-color: $white;
+    transition: .64s ease-in-out;
+    animation: 1s ease-in-out 0s 1 slideInFromBottom;
+  }
+
+  &-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    padding: 4rem;
+
+    div {
+      h1 {
+        font-family: $font1;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.75em;
+        text-transform: uppercase;
+        color: $dark-blue;
+
+        .cf-logo {
+          display: inline;
+          height: 25px;
+          width: auto;
+          margin: 0 8px 3px 0;
+        }
+      }
+    }
+
+    p {
+      font-family: $font2;
+      font-size: .875rem;
+      color: $dark-blue;
+      line-height: 1.5;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      font-family: $font2;
+      font-size: .875rem;
+      color: $dark-blue;
+      line-height: 1.5;
+      list-style-type: none;
+      margin: 0 0 0 10px;
+    }
+
+    .cf-credits {
+      text-align: center;
+      color: $light-blue;
+      padding: 1em;
+      margin-top: 1em;
+    }
+
+    .cf-credits:hover {
+      color: $dark-blue;
+      cursor: pointer;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: .875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: #0A0A0A;
+    z-index: 4;
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.cf-modal-popup-btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  margin-top: 1em;
+}
+
+.cf-modal-popup-btn-primary {
+  background-color: $dark-blue;
+  color: $white;
+  border: 0px solid $white;
+  border-radius: 0;
+  width: auto;
+  font-size: .875rem;
+  padding: 5px;
+}
+
+.cf-modal-popup-btn-primary:hover {
+  background-color: $light-blue;
+  color: $dark-blue;
+  cursor: pointer;
+}
+
+.disabled {
+  display: none;
+}
+
+.cf-bold {
+  font-weight: 700;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.cf-radio-form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cf-radio-btn-group {
+  display: flex;
+  width: 100%;
+}
+
+.cf-radio-btn-primary {
+  background-color: $dark-blue;
+  color: $white;
+  border: 0px solid $white;
+  border-radius: 0;
+}
+
+.cf-radio-btn-primary:not(:disabled):not(.disabled).active {
+  background-color: $blue;
+  color: $dark-blue;
+  border: 0px solid $white;
+  border-radius: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('../../../assets/icons/down-black.png') no-repeat right $white;
+  background-position-x: 10px;
+}
+
+select option {
+  color: $dark-blue;
+  line-height: 15px;
+}
+
+.form-control {
+  border: 1px solid $white;
+  border-radius: 0;
+  background-color: $light-blue;
+  color: $white;
+  padding: 0 35px;
+}
+
+@media only screen and (max-width: 940px) {
+  .cf-modal-popup {
+    &-img {
+      width: 20%;
+      @include ease(333ms);
+    }
+    &-text {
+      width: 80%;
+      @include ease(333ms);
+    }
+  }
+}

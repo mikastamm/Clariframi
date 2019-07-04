@@ -1,0 +1,25 @@
+@import '../../../../../scss/var';
+
+.cf-checkbox-property-form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cf-checkbox-property-btn-group {
+  display: flex;
+  width: 100%;
+}
+
+.cf-checkbox-property-btn-primary {
+  background-color: $dark-blue;
+  color: $white;
+  border: 0px solid $white;
+  border-radius: 0;
+}
+
+.cf-checkbox-property-btn-primary:not(:disabled):not(.disabled).active {
+  background-color: $blue;
+  color: $dark-blue;
+  border: 0px solid $white;
+  border-radius: 0;
+}

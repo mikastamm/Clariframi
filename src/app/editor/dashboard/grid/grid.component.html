@@ -1,0 +1,6 @@
+<svg width=100% height=100% (window:resize)="updateLines()" id="cf-grid-svg">
+  <!-- Vertical Lines -->
+  <line *ngFor='let number of xLines; index as i' [attr.x1]='gridService.spacing*i' y1='0' [attr.x2]='gridService.spacing*i' y2='100%' stroke="#dedede" stroke-width="1"/>
+  <!-- Horizontal Lines -->
+  <line *ngFor='let number of yLines; index as i' x0='0' [attr.y1]='gridService.spacing*i' x2='100%' [attr.y2]='gridService.spacing*i' stroke="#dedede" stroke-width="1" />
+</svg>

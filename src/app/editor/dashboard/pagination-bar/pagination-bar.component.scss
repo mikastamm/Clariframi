@@ -1,0 +1,25 @@
+@import '../../../../scss/var';
+
+button {
+  margin: 0;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  background-color: $dark-blue;
+  color: $white;
+  order: 0px solid $white;
+}
+
+.active {
+  background-color: $blue;
+  color: $dark-blue;
+}
+
+#pagination {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  width: 2em;
+}

@@ -1,0 +1,10 @@
+<div #root mockup-element [mockup-base]="this" placement="top" [ngbTooltip]="tipContent" [openDelay]="1500"
+     [style.font-size]="value('fontSize')+''+value('unit')"
+     style="">
+    <fa [name]="value('name')" [style.color]="value('color')"></fa>
+</div>
+<ng-template #tipContent>
+    <div *ngFor="let property of this.state?.propertyStates">
+        <span *ngIf="property.property.category == 'css'">{{property.property.title}}: {{property.value}}</span>
+    </div>
+</ng-template>

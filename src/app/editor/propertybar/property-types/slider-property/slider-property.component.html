@@ -1,0 +1,6 @@
+<div class="field name-box">
+
+  <ng-template #tipContent>{{property.property.title}} {{value}}</ng-template>
+  <input type="range" [(ngModel)]="value" [min]="def.min" [max]="def.max" [value]="def.value" [step]="def.step"
+         placement="top" [ngbTooltip]="tipContent" class="cf-slider-property">
+</div>

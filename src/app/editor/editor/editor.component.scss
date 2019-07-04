@@ -1,0 +1,38 @@
+@import '../../../scss/var';
+
+@mixin ease($time:333ms, $attr:all, $curve:ease-in-out) {
+  -webkit-transition: $attr $time $curve;
+  -moz-transition: $attr $time $curve;
+  -o-transition: $attr $time $curve;
+  -ms-transition: $attr $time $curve;
+  transition: $attr $time $curve;
+}
+
+div.row {
+  flex-wrap: nowrap !important;
+}
+
+.stretch{
+  height: calc(100vh - 50px);
+}
+
+#propertybar{
+  display: block;
+  height: calc(100vh - 50px);
+  min-width: 285px; // 17%
+  max-width: 285px;
+  padding: 10px;
+  background: $light-blue;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 940px) {
+  .stretch{
+    height: calc(100vh - 81px);
+  }
+  #propertybar {
+    height: calc(100vh - 81px);
+    @include ease(333ms);
+    display: none;
+  }
+}

@@ -1,0 +1,34 @@
+<div class="cf-property-bar-logo" *ngIf="hidden">
+  <img src="../../../assets/favicon/apple-icon-180x180.png" >
+  <h2>Clariframi.de</h2>
+</div>
+<div id=propertybar *ngIf="!hidden">
+  <h4 class="cf-property-bar-h4" *ngIf="checkCategories('html')" (click)="toggleHtml(htmlHidden)"
+    style="text-align: center">HTML Properties</h4>
+  <div *ngIf="!htmlHidden" [@htmlInOut]>
+    <div *ngFor="let prop of properties; let i = index;">
+      <app-property-wrapper [property]=prop *ngIf="prop.property.category == 'html'"></app-property-wrapper>
+    </div>
+  </div>
+  <h4 class="cf-property-bar-h4" *ngIf="checkCategories('css')" (click)="toggleCss(cssHidden)"
+    style="text-align: center">CSS Properties</h4>
+  <div *ngIf="!cssHidden" [@cssInOut]>
+    <div *ngFor="let prop of properties; let i = index;">
+      <app-property-wrapper [property]=prop *ngIf="prop.property.category == 'css'"></app-property-wrapper>
+    </div>
+  </div>
+
+  <h4 class="cf-property-bar-h4" *ngIf="checkCategories('Native Flow')" (click)="nativeFlowHidden = !nativeFlowHidden"
+    style="text-align: center">
+    Native Flow</h4>
+  <div *ngIf="!nativeFlowHidden" [@cssInOut]>
+    <div *ngFor="let prop of properties; let i = index;">
+      <app-property-wrapper [property]=prop *ngIf="prop.property.category == 'Native Flow'"></app-property-wrapper>
+    </div>
+  </div>
+
+  <div *ngFor="let prop of properties" class="mt-4">
+    <app-property-wrapper *ngIf="prop.property.category == 'bin'" [property]="prop"></app-property-wrapper>
+  </div>
+
+</div>

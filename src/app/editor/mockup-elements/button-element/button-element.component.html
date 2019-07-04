@@ -1,0 +1,10 @@
+<span #root mockup-element [mockup-base]="this" placement="top" [ngbTooltip]="tipContent" [openDelay]="1500"
+      style="">
+    <input type="button" [value]="value('text')" [style.font-size]="value('fontSize')+''+value('unit')" [style.background-color]="value('bgColor')"
+           [style.border-style]="value('bStyle')" [style.border-radius]="value('radius')" style="min-width: 75px;" (click)="switchPage(value('page'))">
+</span>
+<ng-template #tipContent>
+    <div *ngFor="let property of this.state?.propertyStates">
+        <span *ngIf="property.property.category == 'css'">{{property.property.title}}: {{property.value}}</span>
+    </div>
+</ng-template>

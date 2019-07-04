@@ -1,0 +1,9 @@
+<textarea mockup-element [mockup-base]="this" #root placement="top" [ngbTooltip]="tipContent" [openDelay]="1500"
+          [rows]="value('rows')" [cols]="value('width')" [name]="value('name')" [style.background-color]="value('bgColor')"
+  style=" overflow-wrap: break-word;">{{value('text')}}
+</textarea>
+<ng-template #tipContent>
+    <div *ngFor="let property of this.state?.propertyStates">
+        <span *ngIf="property.property.category == 'css'">{{property.property.title}}: {{property.value}}</span>
+    </div>
+</ng-template>

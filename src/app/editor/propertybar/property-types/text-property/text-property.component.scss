@@ -1,0 +1,83 @@
+@import '../../../../../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+@mixin ease($time:333ms, $attr:all, $curve:ease-in-out) {
+  -webkit-transition: $attr $time $curve;
+  -moz-transition: $attr $time $curve;
+  -o-transition: $attr $time $curve;
+  -ms-transition: $attr $time $curve;
+  transition: $attr $time $curve;
+}
+
+$field-color: $white;
+
+.field {
+  width: 100%;
+  position: relative;
+  margin-bottom:15px;
+
+  $hover-label-width: 13%;
+  $placeholder-bumper: 1.5%;
+  $label-padding: 10px;
+
+  label {
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $dark-blue;
+    width: 100%;
+    padding:($label-padding + 0px);
+    font-size: 16px;
+    letter-spacing: 0.075em;
+    color: $white;
+    @include ease(333ms);
+  }
+
+  input[type="text"]{
+    border: none;
+    background: $field-color;
+    width: 100%;
+    margin: 0;
+    padding: $label-padding 0;
+    padding-left: $hover-label-width + $placeholder-bumper;
+    color: $dark-blue;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+
+    &#msg {
+      height: 18px;
+      resize: none;
+      @include ease(333ms);
+    }
+
+    &:focus,
+    &.focused {
+      outline:none;
+
+      &#msg {
+        padding-bottom:150px;
+      }
+
+      + label {
+        width: $hover-label-width;
+        background: $blue;
+        color: $dark-blue;
+      }
+    }
+
+    &.focused {
+      + label {
+        color: $blue;
+      }
+    }
+  }
+
+  &:hover {
+    label {
+      width: $hover-label-width;
+      background: $dark-blue;
+      color: darken($white, 10%);
+    }
+  }
+}

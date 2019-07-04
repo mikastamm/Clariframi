@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+    font-family: "Poppins-Medium";
+    src: url("assets/fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins-Light";
+    src: url("assets/fonts/Poppins-Light.ttf") format("truetype");
+}
+
+@import 'scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+::selection {
+    background-color: $dark-blue;
+    color: $white;
+}
+
+*{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+
+* {
+    box-sizing: border-box;
+    font-family: $font3;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: $white;
+}
+
+.cf-toolbar-item-box {
+    width: 10em;
+    height: 50px;
+    margin: 0.25em 10px;
+}
+
+//Gets applied to the selection
+.selectedMockupComponent{
+    outline: dashed 3px #a3c0c6;
+}
+
+.flipX{
+    transform-origin: top left;
+    -moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+-ms-transform: scale(-1, 1);
+transform: scale(-1, 1);
+}
+
+.flipY{
+        transform-origin: top left;
+
+    -moz-transform: scale(1, -1);
+-webkit-transform: scale(1, -1);
+-o-transform: scale(1, -1);
+-ms-transform: scale(1, -1);
+transform: scale(1, -1);
+}

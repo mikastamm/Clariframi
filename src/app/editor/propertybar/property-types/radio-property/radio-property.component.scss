@@ -1,0 +1,25 @@
+@import '../../../../../scss/var';
+
+.cf-radio-property-form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cf-radio-property-btn-group {
+  display: flex;
+  width: 100%;
+}
+
+.cf-radio-property-btn-primary {
+  background-color: $dark-blue;
+  color: $white;
+  border: 0px solid $white;
+  border-radius: 0;
+}
+
+.cf-radio-property-btn-primary:not(:disabled):not(.disabled).active {
+  background-color: $blue;
+  color: $dark-blue;
+  border: 0px solid $white;
+  border-radius: 0;
+}

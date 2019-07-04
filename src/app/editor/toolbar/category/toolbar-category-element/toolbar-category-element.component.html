@@ -1,0 +1,4 @@
+<button class="btn" [ngClass]="isSelected ? 'btn-primary' : 'btn-light'" (click)=onClick()>
+  <i [class]="'fa cf-toolbar-icon ' + category.faIconClass"></i>
+  <h5 class="cf-toolbar-h5">{{category.name}}</h5>
+</button>

@@ -1,0 +1,72 @@
+<nav class="cf">
+  <!--  Navigation for Events -->
+  <ul class="cf-nav-wrapper">
+    <!-- Export dialog -->
+    <li class="cf-nav-item">
+      <a class="cf-nav-item-link" (click)=startSave() title="Export as">
+        <fa name="download"></fa>
+      </a>
+    </li>
+    <li *ngIf="showSaveDialog" class="cf-nav-item">
+      <select class="form-control cf-navbar-select-export" [(ngModel)]="saveType" (change)="saveAsFile(saveType)">
+        <option value="this" selected disabled>Export as</option>
+        <option value="json">JSON</option>
+        <option value="xml">XML</option>
+      </select>
+    </li>
+
+    <!-- Import dialog -->
+    <li class="cf-nav-item">
+      <a class="cf-nav-item-link" (click)=startImport() title="Import">
+        <fa name="upload"></fa>
+      </a>
+    </li>
+
+    <input type="file" name="" (change)="saving.loadFromFile($event.target.files)" #fileInput id="fileInput" class="cf-nav-item cf-navbar-file-import" accept="json, xml" *ngIf="showImportFile">
+
+    <li *ngIf="showImportDialog" class="cf-nav-item">
+      <select class="form-control cf-navbar-select-import" [(ngModel)]="loadSaveName" (change)="import()">
+        <option value="" selected disabled>...</option>
+        <option *ngFor="let save of saving.getSaveNames()">{{save}}</option>
+        <option>Load Save from File</option>
+      </select>
+    </li>
+
+    <!-- Save as dialog-->
+    <li class="cf-nav-item">
+      <a class="cf-nav-item-link" (click)=startExport() title="Save">
+        <fa name="save"></fa>
+      </a>
+    </li>
+
+    <li class="cf-nav-item" *ngIf="showExportDialog">
+      <div class="input-group">
+        <input type="text" class="form-control cf-navbar-select-save" placeholder="name" [(ngModel)]="saveName">
+        <div class="input-group-append">
+          <button class="btn btn-primary cf-navbar-select-save-btn" [ngClass]="{'disabled': saveName == ''}" (click)="export()">Save</button>
+        </div>
+      </div>
+    </li>
+
+    <!-- Save as PNG-->
+    <li id="download" class="cf-nav-item">
+      <a class="cf-nav-item-link" (click)=saveAsIMG() title="Screenshot this Dashboard">
+      <fa name="camera"></fa>
+      </a>
+      <a #downloadLink class="cf-nav-item-link" title="Download PNG"></a>
+    </li>
+
+    <!-- Toggle Grid-->
+    <li class="cf-nav-item">
+      <a class="cf-nav-item-link" (click)=toggleGrid()>
+        <i class="fas fa-toggle-on" id="cf-toggle-icon"></i> <span>Toggle Grid</span>
+      </a>
+    </li>
+</ul>
+
+
+<!-- File Name -->
+  <h1 class="cf-h1">
+    {{this.saveName}}
+  </h1>
+</nav>

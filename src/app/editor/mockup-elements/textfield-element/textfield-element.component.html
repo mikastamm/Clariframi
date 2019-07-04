@@ -1,0 +1,10 @@
+<span mockup-element [mockup-base]="this" #root placement="top" [ngbTooltip]="tipContent" [openDelay]="1500"
+      style="">
+  <input type="text" [placeholder]="value('text')" [name]="value('name')" [value]="value('value')" [style.width]="value('width')" [style.height]="value('height')"
+         [style.background-color]="value('bgColor')">
+</span>
+<ng-template #tipContent>
+  <div *ngFor="let property of this.state?.propertyStates">
+    <span *ngIf="property.property.category == 'css'">{{property.property.title}}: {{property.value}}</span>
+  </div>
+</ng-template>

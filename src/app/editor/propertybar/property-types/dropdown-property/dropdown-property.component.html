@@ -1,0 +1,5 @@
+<div class="form-group">
+  <select class="form-control" [(ngModel)]="value">
+    <option *ngFor="let item of items" [value]="item">{{item.charAt(0).toUpperCase() + item.slice(1)}}</option>
+  </select>
+</div>

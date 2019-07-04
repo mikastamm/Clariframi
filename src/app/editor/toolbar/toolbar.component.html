@@ -1,0 +1,9 @@
+<div class="toolbar">
+
+   <app-toolbar-item-bar *ngIf=selectedCategory [category]=selectedCategory class="cf-toolbar-itembar">
+   </app-toolbar-item-bar>
+   <app-toolbar-category-selector [categories]=categories (onSelectionChange)=onCategorySelectionChange($event)
+      class="cf-toolbar-category-selector">
+   </app-toolbar-category-selector>
+
+</div>

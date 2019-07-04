@@ -1,0 +1,15 @@
+<span #root mockup-element [mockup-base]="this" placement="top" [ngbTooltip]="tipContent" [openDelay]="1500"
+      [style.width]="value('width')" [style.height]="value('height')"
+      style=" border: 1px solid black">
+  <svg width='100%' height='100%'>
+    <line x1='0' y1='0' [attr.x2]="value('width')" [attr.y2]="value('height')"
+      style="stroke: grey; stroke-width: 1px;" />
+    <line x1='0' [attr.y1]="value('height')" [attr.x2]="value('width')" y2='0'
+      style="stroke: grey; stroke-width: 1px;" />
+  </svg>
+</span>
+<ng-template #tipContent>
+  <div *ngFor="let property of this.state?.propertyStates">
+    <span *ngIf="property.property.category == 'css'">{{property.property.title}}: {{property.value}}</span>
+  </div>
+</ng-template>

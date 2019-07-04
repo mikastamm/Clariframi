@@ -1,0 +1,12 @@
+@import '../../../../../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+.cf-bin-property {
+  display: block;
+  text-align: center;
+  color: darkred;
+}
+
+.cf-bin-property:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+<div class="cf-dashboard-container" (mousedown)="mousedown($event)" (touchend)="touchend($event)" (touchstart)="touchdown($event)" (touchmove)="touchmove($event)"
+(mousemove)="mousemove($event)">
+<div #spawner></div>
+  <div *ngFor="let dashboard of pagination.dashboardCount; let i = index"
+    [ngClass]="{'d-none': pagination.activeDashboard !== i}">
+    <app-dashboard [dashboardIndex]="i">
+
+    </app-dashboard>
+
+  </div>
+</div>
+<app-pagination-bar></app-pagination-bar>

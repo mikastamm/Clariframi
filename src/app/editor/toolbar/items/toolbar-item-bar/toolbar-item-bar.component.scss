@@ -1,0 +1,14 @@
+@import '../../../../../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+.cf-toolbar-item-h3 {
+  font-family: $font3;
+  font-size: 18px;
+  text-align: center;
+  color: $dark-blue;
+  margin: 10px 0;
+}
+
+.cf-toolbar-div {
+  display: flex;
+}

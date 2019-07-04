@@ -1,0 +1,7 @@
+<div class="form-group cf-radio-property-form-group">
+  <div class="btn-group btn-group-toggle cf-radio-property-btn-group" ngbRadioGroup name="radioBasic" *ngFor="let item of property.property.defaultValue" [(ngModel)]="value">
+    <label ngbButtonLabel class="btn-primary cf-radio-property-btn-primary">
+      <input ngbButton type="radio" [value]="item"> {{item.charAt(0).toUpperCase() + item.slice(1)}}
+    </label>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<span #root mockup-element [mockup-base]="this" placement="top" [ngbTooltip]="tipContent" [openDelay]="1500"
+      [style.font-size]="value('fontSize')+''+value('unit')"
+      [style.color]="value('color')" [style.opacity]="value('opacity')" [style.background-color]="value('bgColor')"
+      [ngClass]="{'font-weight-bold': value('fontStyle')?.bold, 'font-italic': value('fontStyle')?.italic, 'text-underline': value('fontStyle')?.underlined}" class="h3"
+      style="">
+        {{value('text')}}
+</span>
+<style>
+  .text-underline {
+    text-decoration: underline;
+  }
+</style>
+<ng-template #tipContent>
+  <div *ngFor="let property of this.state?.propertyStates">
+    <span *ngIf="property.property.category == 'css'">{{property.property.title}}: {{property.value}}</span>
+  </div>
+</ng-template>

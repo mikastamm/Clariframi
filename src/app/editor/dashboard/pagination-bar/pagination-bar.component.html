@@ -1,0 +1,8 @@
+<div id="pagination">
+  <div *ngFor="let dashboard of pagination.dashboardCount; let i = index">
+    <button (click)="changeDashboard(i)" [ngClass]="{'active': pagination.activeDashboard == i}">{{i}}</button>
+  </div>
+  <div>
+    <button (click)="generateDashboard()"><span class="fa fa-plus"></span></button>
+  </div>
+</div>

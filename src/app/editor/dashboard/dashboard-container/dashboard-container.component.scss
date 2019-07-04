@@ -1,0 +1,12 @@
+@import '../../../../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+.cf-dashboard-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 25px 5px;
+  background-color: whitesmoke;
+}

@@ -1,0 +1,7 @@
+<div class="form-group cf-checkbox-property-form-group">
+  <div class="btn-group btn-group-toggle cf-checkbox-property-btn-group" *ngFor="let item of property.property.defaultValue | keyvalue">
+    <label class="btn-primary cf-checkbox-property-btn-primary" ngbButtonLabel>
+      <input type="checkbox" ngbButton [(ngModel)]="property.value[item.key]"> {{item.key.charAt(0).toUpperCase() + item.key.slice(1)}}
+    </label>
+  </div>
+</div>

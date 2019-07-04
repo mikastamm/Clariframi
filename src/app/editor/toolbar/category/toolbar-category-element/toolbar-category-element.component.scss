@@ -1,0 +1,38 @@
+@import '../../../../../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+.btn {
+  padding: .375rem .25rem;
+}
+
+.btn-light {
+  display: block;
+  width: 100%;
+  color: $white !important;
+  background-color: transparent !important;
+  border: 0 transparent solid;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  color: $dark-blue !important;
+  background-color: transparent !important;
+  border: 0 transparent solid;
+}
+
+.btn.focus, .btn:focus, .btn-light.focus, .btn-light:focus, .btn-primary.focus, .btn-primary:focus {
+  box-shadow: none;
+}
+
+.cf-toolbar-icon {
+  width: 30px;
+  height: auto;
+  font-size: 25px;
+}
+
+.cf-toolbar-h5 {
+  font-family: $font3;
+  font-size: 14px;
+  margin: 0;
+}

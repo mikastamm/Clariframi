@@ -1,0 +1,3 @@
+  <div *ngFor="let category of categories; let i = index">
+    <app-toolbar-category-element [category]=category [isSelected]="i == selectedIndex"  (click)=onCategoryClick(i)></app-toolbar-category-element>
+  </div>

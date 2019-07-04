@@ -1,0 +1,5 @@
+<div #root mockup-element [mockup-base]="this" class="bb-c" [style.width]="value('width')+'px'" [style.height]="value('height')+'px'"
+    [style.background]="value('background') + value('background-o')?.toString(16)"
+    [style.border]="'1px solid ' + value('borderColor') + value('border-o')?.toString(16)">
+    <div #elementSpawner></div>
+</div>

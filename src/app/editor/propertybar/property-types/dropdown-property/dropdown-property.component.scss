@@ -1,0 +1,22 @@
+@import '../../../../../scss/var';
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('../../../../../assets/icons/down-white.png') no-repeat right $white;
+  background-position-x: 10px;
+}
+
+select option {
+  color: $white;
+  line-height: 15px;
+}
+
+.form-control {
+  border: 0px solid $white;
+  border-radius: 0;
+  background-color: $dark-blue;
+  color: $white;
+  padding: 0 35px;
+}

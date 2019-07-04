@@ -1,0 +1,19 @@
+@import '../../../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.cf-toolbar-category-selector {
+    height: 100%;
+    background-color: $light-blue;
+}
+
+.cf-toolbar-itembar {
+    height: 100%;
+    background-color: $blue;
+}
+

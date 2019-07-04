@@ -1,0 +1,58 @@
+@import '../scss/var';
+@import '~font-awesome/css/font-awesome.css';
+
+.cf-app-editor-message {
+  display: none;
+}
+
+/* Die App benötigt eine mindest Breite von 768px */
+
+@media only screen and (max-width: 767px){
+  .cf-app-editor {
+    display: none;
+  }
+  .cf-app-editor-message {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    padding: 0 5%;
+    justify-content: center;
+    align-items: center;
+  }
+  .cf-app-editor-message p {
+    color: $dark-blue;
+    text-align: center;
+  }
+  .cf-app-editor-message p fa {
+    color: darkred;
+    font-size: 22px;
+    line-height: 40px;
+  }
+}
+
+/* Die App benötigt eine mindest Höhe von 945px */
+/*
+@media only screen and (max-height: 945px){
+  .cf-app-editor {
+    display: none;
+  }
+  .cf-app-editor-message {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    padding: 0 5%;
+    justify-content: center;
+    align-items: center;
+  }
+  .cf-app-editor-message p {
+    color: $dark-blue;
+    text-align: center;
+  }
+  .cf-app-editor-message p fa {
+    color: darkred;
+    font-size: 22px;
+    line-height: 40px;
+  }
+}*/
