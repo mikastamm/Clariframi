@@ -22,7 +22,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][[product-screenshot]](https://github.com/mikastamm/Clariframi)
 
 This web application was developed as part of a project by students of the Technical University of Central Hesse in the course of study Media Informatics Web and Mobile Application.
 
@@ -33,7 +33,6 @@ It was made in a team effort by
 * Noah Stürtz   
 * Silas Buchwald
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
