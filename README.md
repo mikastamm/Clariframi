@@ -21,7 +21,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-![Screenshot](images/application.jpg)
 
 This web application was developed as part of a project by students of the Technical University of Central Hesse in the course of study Media Informatics Web and Mobile Application.
 
@@ -40,6 +39,8 @@ It was made in a team effort by
 * [Bootstrap](https://getbootstrap.com)
 * [GSAP](https://greensock.com/gsap/)
 
+![Screenshot](images/intro.jpg)
+![Screenshot](images/application.jpg)
 
 
 [product-screenshot]: images/into.jpg
