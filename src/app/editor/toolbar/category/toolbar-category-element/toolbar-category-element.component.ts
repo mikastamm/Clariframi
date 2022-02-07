@@ -7,17 +7,17 @@ import { ToolbarCategory } from '../toolbar-category';
   styleUrls: ['./toolbar-category-element.component.scss']
 })
 export class ToolbarCategoryElementComponent implements OnInit {
-@Input()
-category:ToolbarCategory;
-@Input()
-isSelected=false;
+  @Input()
+  category: ToolbarCategory;
+  @Input()
+  isSelected = false;
 
-@Output()
-click = new EventEmitter<any>();
+  @Output()
+  click = new EventEmitter<any>();
 
-private onClick(){
-  this.click.emit();
-}
+  public onClick() {
+    this.click.emit();
+  }
 
   constructor() { }
 

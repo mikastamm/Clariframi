@@ -12,7 +12,7 @@ export class SliderPropertyComponent extends PropertyBaseComponent implements On
     super();
   }
 
-  private def;
+  public def;
 
   ngOnInit() {
     this.def = this.property.property.defaultValue;

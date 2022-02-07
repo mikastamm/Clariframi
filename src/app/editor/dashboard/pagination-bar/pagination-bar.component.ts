@@ -9,8 +9,8 @@ import { PaginationService } from '../pagination.service';
 export class PaginationBarComponent implements OnInit {
 
   constructor(
-    private pagination: PaginationService,
-  ) {  
+    public pagination: PaginationService,
+  ) {
   }
 
   public generateDashboard() {

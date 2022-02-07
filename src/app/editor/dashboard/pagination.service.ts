@@ -11,7 +11,7 @@ export class PaginationService {
   public dashboards: QueryList<DashboardComponent>;
   public elements: ElementRef[]
 
-  private dashboardCount = new Array(1);
+  dashboardCount = new Array(1);
 
   activeDashboard = 0;
 
@@ -19,7 +19,7 @@ export class PaginationService {
 
   public createDashboard() {
     this.dashboardCount.push(this.dashboardCount.length);
-    this.dashboards.changes.subscribe(val=> {  this.dashboards = val; });
+    this.dashboards.changes.subscribe(val => { this.dashboards = val; });
   }
 
   public setDashboardCount(count: number) {

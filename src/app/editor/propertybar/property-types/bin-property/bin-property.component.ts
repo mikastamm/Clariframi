@@ -12,7 +12,7 @@ import { HostListener } from "@angular/core";
 export class BinPropertyComponent extends PropertyBaseComponent implements OnInit {
 
   constructor(private selectionService: SelectionService) {
-      super();
+    super();
   }
 
   @HostListener('document:keydown.delete', ['$event'])
@@ -20,13 +20,13 @@ export class BinPropertyComponent extends PropertyBaseComponent implements OnIni
     this.deleteItem();
   }
 
-  private deleteItem() {
-      this.value = true;
-      this.selectionService.selected = [];
+  deleteItem() {
+    this.value = true;
+    this.selectionService.selected = [];
   }
 
   ngOnInit() {
-      this.value = false;
+    this.value = false;
   }
 
 }

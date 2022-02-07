@@ -18,18 +18,19 @@ export class DashboardContainerComponent implements OnInit, AfterViewInit {
   @ViewChildren(DashboardComponent)
   dashboards: QueryList<DashboardComponent>;
 
-  list: QueryList<DashboardComponent> = this.dashboards;
+  list: QueryList<DashboardComponent>;
 
   @ViewChild("spawner", { read: ViewContainerRef }) elementSpawner: ViewContainerRef;
 
-  constructor(private pagination: PaginationService,  private placementService: PlacementService,
+  constructor(public pagination: PaginationService, private placementService: PlacementService,
     private componentFactoryResolver: ComponentFactoryResolver,
     private mockupElementStateService: MockupElementStateService,
     private dataService: ToolbarDataService,
     private renderer: Renderer,
-    private selection:SelectionService) { }
+    private selection: SelectionService) { }
 
   ngAfterViewInit(): void {
+    this.list = this.dashboards;
     this.pagination.dashboards = this.dashboards;
   }
 
@@ -39,35 +40,35 @@ export class DashboardContainerComponent implements OnInit, AfterViewInit {
     this.onStartSelection(event.clientX, event.clientY);
   }
 
-touchmove(event){
+  touchmove(event) {
     this.updateSelectionArea(event.touches[0].clientX, event.touches[0].clientY);
     return true;
-}
+  }
 
   logged = false;
   i = 0;
   mousemove(event) {
     this.updateSelectionArea(event.clientX, event.clientY)
-   
+
   }
 
   selectionStarted = false;
-onStartSelection(x, y){
-  if(!this.selectionStarted){
-    this.selectionStarted = true;
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(SelectionAreaComponent);
-    const component = this.elementSpawner.createComponent(componentFactory);
+  onStartSelection(x, y) {
+    if (!this.selectionStarted) {
+      this.selectionStarted = true;
+      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(SelectionAreaComponent);
+      const component = this.elementSpawner.createComponent(componentFactory);
 
-    component.instance.x = x;
-    component.instance.y = y;
+      component.instance.x = x;
+      component.instance.y = y;
 
-    this.selectionRef = component;
-    this.selectionPos = {x: x, y:y}
-    this.logged = false;
+      this.selectionRef = component;
+      this.selectionPos = { x: x, y: y }
+      this.logged = false;
+    }
   }
-}
 
-  updateSelectionArea(x,y){
+  updateSelectionArea(x, y) {
     if (this.selectionRef) {
       let sel = this.selectionRef.instance;
       let rectX, rectY, w, h;
@@ -85,14 +86,14 @@ onStartSelection(x, y){
     }
   }
 
-  touchdown(event){
+  touchdown(event) {
     console.log("selectionStart");
-    if(!this.selection.isDragging)
-    this.onStartSelection(event.touches[0].clientX,event.touches[0].clientY);
+    if (!this.selection.isDragging)
+      this.onStartSelection(event.touches[0].clientX, event.touches[0].clientY);
     return false;
   }
 
-  touchend(event){
+  touchend(event) {
     this.onStopSelection();
     return true;
   }
@@ -102,7 +103,7 @@ onStartSelection(x, y){
     this.onStopSelection();
   }
 
-  onStopSelection(){
+  onStopSelection() {
     if (this.selectionRef)
       this.selectionRef.instance.checkSelection();
     this.removeSelection();
@@ -114,7 +115,7 @@ onStartSelection(x, y){
       this.selectionRef.location.nativeElement.classList.add("d-none");
     this.selectionRef = null
   }
-  
+
   ngOnInit() {
   }
 

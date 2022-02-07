@@ -8,7 +8,7 @@ import { PropertyBaseComponent } from '../../property-base/property-base.compone
 })
 export class DropdownPropertyComponent extends PropertyBaseComponent implements OnInit {
 
-  private items: any[];
+  public items: any[];
 
   constructor() {
     super();

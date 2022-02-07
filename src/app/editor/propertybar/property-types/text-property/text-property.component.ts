@@ -8,7 +8,7 @@ import { PropertyBaseComponent } from '../../property-base/property-base.compone
 })
 export class TextPropertyComponent extends PropertyBaseComponent implements OnInit {
 
-  private placeholder: string;
+  public placeholder: string;
 
   constructor() {
     super();
