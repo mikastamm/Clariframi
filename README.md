@@ -21,8 +21,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-<img src="images/application.jpg" alt="Logo" width="80" height="80">
+![Screenshot](images/application.jpg)
 
 This web application was developed as part of a project by students of the Technical University of Central Hesse in the course of study Media Informatics Web and Mobile Application.
 
